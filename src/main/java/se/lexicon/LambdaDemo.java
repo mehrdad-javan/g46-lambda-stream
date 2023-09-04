@@ -3,6 +3,7 @@ package se.lexicon;
 import se.lexicon.interfaces.DoStringStuff;
 import se.lexicon.interfaces.DoubleOperator;
 import se.lexicon.interfaces.IntRandom;
+import se.lexicon.interfaces.Printer;
 
 import java.util.Random;
 
@@ -34,10 +35,13 @@ public class LambdaDemo {
         System.out.println("-----------------------------");
         System.out.println(calcOperator(10d, 5d, additionOperator));
         System.out.println(calcOperator(10d, 5d, subtractionOperator));
-
+        System.out.println("-----------------------------");
         // int generate();
         IntRandom randomNumberOperator =  () -> new Random().nextInt();
         System.out.println(randomNumberOperator.generate());
+        System.out.println("-----------------------------");
+        Printer printMessage = message -> System.out.println(message);
+        printMessage.print("Hello Lambda!");
 
 
 
