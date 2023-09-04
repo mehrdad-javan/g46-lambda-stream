@@ -1,6 +1,7 @@
 package se.lexicon.utilExamples;
 
 import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 public class FunctionDemo {
 
@@ -21,6 +22,13 @@ public class FunctionDemo {
 
         Account account = new Account("user",Role.ROLE_USER);
         System.out.println(extractUserPass.apply(account));
+
+
+        Function<String, String> toUpperCase = str -> str.toUpperCase();
+        System.out.println(toUpperCase.apply("abcdefgh"));
+        UnaryOperator<String> toUpperCase2 = str -> str.toUpperCase();
+        System.out.println(toUpperCase2.apply("abcdefgh"));
+
 
 
 
